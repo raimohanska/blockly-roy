@@ -2,6 +2,11 @@
   function blocklyLoaded(blockly) {
     // Called once Blockly is fully loaded.
     window.Blockly = blockly;
+    blockly.addChangeListener(generateCode)
+  }
+  function generateCode() {
+    var code = Blockly.TurtleRoy.workspaceToCode()    
+    document.getElementById("code").innerHTML = code
   }
 </script>
 <style>
@@ -12,8 +17,13 @@
   code with 
   <a href="https://code.google.com/p/blockly/">Blockly</a>
   blocks!
-  <p>Drag some blocks to the canvas and <button onclick="javascript:alert(Blockly.TurtleRoy.workspaceToCode())">Generate code</button>
+  <p>Drag some blocks to the canvas, and see how code generation works!
   </p>
   <p>Feel free to fork the  source code on <a href="https://github.com/raimohanska/blockly-roy">Github</a>!</p>
 </div>
-<iframe width="100%" height="90%" src="frame.html"></iframe>
+<h4>Blocks</h4>
+<iframe width="100%" height="40%" src="frame.html"></iframe>
+<h4>Generated code</h4>
+<div class="code">
+  <pre><code id="code"></code></pre>
+</div>
