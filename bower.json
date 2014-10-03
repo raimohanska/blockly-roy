@@ -13,6 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "blockly": "git@github.com:raimohanska/blockly.git#master"
+    "blockly": "https://github.com/raimohanska/blockly.git"
   }
 }
